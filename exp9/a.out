@@ -1,0 +1,86 @@
+#! /opt/homebrew/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x1329069a0 .scope module, "ft_decoder_tb" "ft_decoder_tb" 2 1;
+ .timescale 0 0;
+v0x13291a410_0 .var "a", 0 0;
+v0x13291a4c0_0 .var "b", 0 0;
+v0x13291a550_0 .var "c", 0 0;
+v0x13291a600_0 .var "d", 0 0;
+v0x13291a6b0_0 .net "e", 0 0, L_0x13291a830;  1 drivers
+v0x13291a780_0 .net "f", 0 0, L_0x13291a980;  1 drivers
+E_0x132908cd0 .event edge, v0x13291a160_0, v0x13291a0b0_0, v0x13291a010_0, v0x132905580_0;
+S_0x132906b10 .scope module, "mydecoder" "ft_decoder" 2 5, 3 1 0, S_0x1329069a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /INPUT 1 "d";
+    .port_info 4 /OUTPUT 1 "e";
+    .port_info 5 /OUTPUT 1 "f";
+L_0x13291a830 .functor OR 1, v0x13291a410_0, v0x13291a4c0_0, C4<0>, C4<0>;
+L_0x13291a980 .functor OR 1, v0x13291a550_0, v0x13291a600_0, C4<0>, C4<0>;
+v0x132905580_0 .net "a", 0 0, v0x13291a410_0;  1 drivers
+v0x13291a010_0 .net "b", 0 0, v0x13291a4c0_0;  1 drivers
+v0x13291a0b0_0 .net "c", 0 0, v0x13291a550_0;  1 drivers
+v0x13291a160_0 .net "d", 0 0, v0x13291a600_0;  1 drivers
+v0x13291a200_0 .net "e", 0 0, L_0x13291a830;  alias, 1 drivers
+v0x13291a2e0_0 .net "f", 0 0, L_0x13291a980;  alias, 1 drivers
+    .scope S_0x1329069a0;
+T_0 ;
+    %wait E_0x132908cd0;
+    %vpi_call 2 8 "$display", "A: %b B: %b C: %b D: %b O1: %b O2: %b", v0x13291a410_0, v0x13291a4c0_0, v0x13291a550_0, v0x13291a600_0, v0x13291a6b0_0, v0x13291a780_0 {0 0 0};
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x1329069a0;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x13291a410_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x13291a4c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x13291a550_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x13291a600_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x13291a600_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x13291a410_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x13291a4c0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x13291a550_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x13291a600_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x13291a600_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x13291a410_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x13291a4c0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x13291a550_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x13291a600_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x13291a600_0, 0, 1;
+    %vpi_call 2 23 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "ft_decoder_tb.v";
+    "ft_decoder.v";
