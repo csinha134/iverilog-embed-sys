@@ -1,0 +1,93 @@
+#! /opt/homebrew/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x127f06bb0 .scope module, "demux_tb" "demux_tb" 2 1;
+ .timescale 0 0;
+v0x127f1ee70_0 .net "a", 0 0, L_0x127f1f5c0;  1 drivers
+v0x127f1ef30_0 .net "b", 0 0, L_0x127f1f810;  1 drivers
+v0x127f1efc0_0 .net "c", 0 0, L_0x127f1fb70;  1 drivers
+v0x127f1f070_0 .net "d", 0 0, L_0x127f1fd30;  1 drivers
+v0x127f1f100_0 .var "i", 0 0;
+v0x127f1f1d0_0 .var "s1", 0 0;
+v0x127f1f280_0 .var "s2", 0 0;
+E_0x127f0c090 .event edge, v0x127f1ec20_0, v0x127f1ed60_0, v0x127f1ecc0_0;
+S_0x127f06d20 .scope module, "dm" "demux" 2 5, 3 1 0, S_0x127f06bb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "s1";
+    .port_info 1 /INPUT 1 "s2";
+    .port_info 2 /INPUT 1 "i";
+    .port_info 3 /OUTPUT 1 "a";
+    .port_info 4 /OUTPUT 1 "b";
+    .port_info 5 /OUTPUT 1 "c";
+    .port_info 6 /OUTPUT 1 "d";
+L_0x127f1f330 .functor NOT 1, v0x127f1f1d0_0, C4<0>, C4<0>, C4<0>;
+L_0x127f1f400 .functor NOT 1, v0x127f1f280_0, C4<0>, C4<0>, C4<0>;
+L_0x127f1f4b0 .functor AND 1, L_0x127f1f330, L_0x127f1f400, C4<1>, C4<1>;
+L_0x127f1f5c0 .functor AND 1, L_0x127f1f4b0, v0x127f1f100_0, C4<1>, C4<1>;
+L_0x127f1f6f0 .functor NOT 1, v0x127f1f1d0_0, C4<0>, C4<0>, C4<0>;
+L_0x127f1f760 .functor AND 1, L_0x127f1f6f0, v0x127f1f280_0, C4<1>, C4<1>;
+L_0x127f1f810 .functor AND 1, L_0x127f1f760, v0x127f1f100_0, C4<1>, C4<1>;
+L_0x127f1f940 .functor NOT 1, v0x127f1f280_0, C4<0>, C4<0>, C4<0>;
+L_0x127f1fa30 .functor AND 1, v0x127f1f1d0_0, L_0x127f1f940, C4<1>, C4<1>;
+L_0x127f1fb70 .functor AND 1, L_0x127f1fa30, v0x127f1f100_0, C4<1>, C4<1>;
+L_0x127f1fc60 .functor AND 1, v0x127f1f1d0_0, v0x127f1f280_0, C4<1>, C4<1>;
+L_0x127f1fd30 .functor AND 1, L_0x127f1fc60, v0x127f1f100_0, C4<1>, C4<1>;
+v0x127f0da60_0 .net *"_ivl_0", 0 0, L_0x127f1f330;  1 drivers
+v0x127f1e420_0 .net *"_ivl_10", 0 0, L_0x127f1f760;  1 drivers
+v0x127f1e4d0_0 .net *"_ivl_14", 0 0, L_0x127f1f940;  1 drivers
+v0x127f1e590_0 .net *"_ivl_16", 0 0, L_0x127f1fa30;  1 drivers
+v0x127f1e640_0 .net *"_ivl_2", 0 0, L_0x127f1f400;  1 drivers
+v0x127f1e730_0 .net *"_ivl_20", 0 0, L_0x127f1fc60;  1 drivers
+v0x127f1e7e0_0 .net *"_ivl_4", 0 0, L_0x127f1f4b0;  1 drivers
+v0x127f1e890_0 .net *"_ivl_8", 0 0, L_0x127f1f6f0;  1 drivers
+v0x127f1e940_0 .net "a", 0 0, L_0x127f1f5c0;  alias, 1 drivers
+v0x127f1ea50_0 .net "b", 0 0, L_0x127f1f810;  alias, 1 drivers
+v0x127f1eae0_0 .net "c", 0 0, L_0x127f1fb70;  alias, 1 drivers
+v0x127f1eb80_0 .net "d", 0 0, L_0x127f1fd30;  alias, 1 drivers
+v0x127f1ec20_0 .net "i", 0 0, v0x127f1f100_0;  1 drivers
+v0x127f1ecc0_0 .net "s1", 0 0, v0x127f1f1d0_0;  1 drivers
+v0x127f1ed60_0 .net "s2", 0 0, v0x127f1f280_0;  1 drivers
+    .scope S_0x127f06bb0;
+T_0 ;
+    %wait E_0x127f0c090;
+    %vpi_call 2 8 "$display", "s1 = %d s2 = %d i = %d a=%d b = %d c=%d d=%d", v0x127f1f1d0_0, v0x127f1f280_0, v0x127f1f100_0, v0x127f1ee70_0, v0x127f1ef30_0, v0x127f1efc0_0, v0x127f1f070_0 {0 0 0};
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x127f06bb0;
+T_1 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x127f1f100_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x127f1f1d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x127f1f280_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x127f1f1d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x127f1f280_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x127f1f1d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x127f1f280_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x127f1f1d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x127f1f280_0, 0, 1;
+    %vpi_call 2 20 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "demux_tb.v";
+    "demux.v";
