@@ -3,6 +3,6 @@ input a,b,c,d;
 output e,f;
 
 assign e = (a|b);
-assign f = (c|d);
+assign f = (a|c);
 
 endmodule
