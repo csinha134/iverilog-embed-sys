@@ -4,7 +4,6 @@ wire q;
 
 jk myflipflop(j,k,clk,q);
 
-
     integer a;
 initial begin
     

@@ -1,3 +1,4 @@
+
 module half_adder_tb;
   reg a, b;
   wire sum, carry;
@@ -6,7 +7,7 @@ module half_adder_tb;
   half_adder myhalfadder(a, b, sum, carry);
   
   always @(a or b) begin
-    $display("Sum=%d Carry=%d", sum, carry);
+    $display("A = %d B = %d Sum = %d Carry = %d", a, b, sum, carry);
   end
 
   initial begin

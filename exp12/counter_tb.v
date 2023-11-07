@@ -10,8 +10,6 @@ initial begin
         #10 clk=~clk;
 end
 
-
-
 initial begin
     $display("clk\treset\tcounter");
     $monitor("%d\t%d\t%d",clk,rst,count); 

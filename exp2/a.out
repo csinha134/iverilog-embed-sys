@@ -7,53 +7,53 @@
 :vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
 :vpi_module "/opt/homebrew/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
-S_0x156004590 .scope module, "half_adder_tb" "half_adder_tb" 2 1;
+S_0x130e061c0 .scope module, "half_adder_tb" "half_adder_tb" 2 2;
  .timescale 0 0;
-v0x156019cf0_0 .var "a", 0 0;
-v0x156019d90_0 .var "b", 0 0;
-v0x156019e40_0 .net "carry", 0 0, L_0x15601a110;  1 drivers
-v0x156019f10_0 .net "sum", 0 0, L_0x156019fc0;  1 drivers
-E_0x156005fb0 .event edge, v0x156019aa0_0, v0x156005830_0;
-S_0x156004700 .scope module, "myhalfadder" "half_adder" 2 6, 3 1 0, S_0x156004590;
+v0x130e16810_0 .var "a", 0 0;
+v0x130e168b0_0 .var "b", 0 0;
+v0x130e16960_0 .net "carry", 0 0, L_0x130e16c30;  1 drivers
+v0x130e16a30_0 .net "sum", 0 0, L_0x130e16ae0;  1 drivers
+E_0x130e06100 .event edge, v0x130e165c0_0, v0x130e06550_0;
+S_0x130e06330 .scope module, "myhalfadder" "half_adder" 2 7, 3 1 0, S_0x130e061c0;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "a";
     .port_info 1 /INPUT 1 "b";
     .port_info 2 /OUTPUT 1 "sum";
     .port_info 3 /OUTPUT 1 "carry";
-L_0x156019fc0 .functor XOR 1, v0x156019cf0_0, v0x156019d90_0, C4<0>, C4<0>;
-L_0x15601a110 .functor AND 1, v0x156019cf0_0, v0x156019d90_0, C4<1>, C4<1>;
-v0x156005830_0 .net "a", 0 0, v0x156019cf0_0;  1 drivers
-v0x156019aa0_0 .net "b", 0 0, v0x156019d90_0;  1 drivers
-v0x156019b40_0 .net "carry", 0 0, L_0x15601a110;  alias, 1 drivers
-v0x156019bf0_0 .net "sum", 0 0, L_0x156019fc0;  alias, 1 drivers
-    .scope S_0x156004590;
+L_0x130e16ae0 .functor XOR 1, v0x130e16810_0, v0x130e168b0_0, C4<0>, C4<0>;
+L_0x130e16c30 .functor AND 1, v0x130e16810_0, v0x130e168b0_0, C4<1>, C4<1>;
+v0x130e06550_0 .net "a", 0 0, v0x130e16810_0;  1 drivers
+v0x130e165c0_0 .net "b", 0 0, v0x130e168b0_0;  1 drivers
+v0x130e16660_0 .net "carry", 0 0, L_0x130e16c30;  alias, 1 drivers
+v0x130e16710_0 .net "sum", 0 0, L_0x130e16ae0;  alias, 1 drivers
+    .scope S_0x130e061c0;
 T_0 ;
-    %wait E_0x156005fb0;
-    %vpi_call 2 9 "$display", "Sum=%d Carry=%d", v0x156019f10_0, v0x156019e40_0 {0 0 0};
+    %wait E_0x130e06100;
+    %vpi_call 2 10 "$display", "A = %d B = %d Sum = %d Carry = %d", v0x130e16810_0, v0x130e168b0_0, v0x130e16a30_0, v0x130e16960_0 {0 0 0};
     %jmp T_0;
     .thread T_0, $push;
-    .scope S_0x156004590;
+    .scope S_0x130e061c0;
 T_1 ;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x156019cf0_0, 0, 1;
+    %store/vec4 v0x130e16810_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x156019d90_0, 0, 1;
+    %store/vec4 v0x130e168b0_0, 0, 1;
     %delay 10, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x156019cf0_0, 0, 1;
+    %store/vec4 v0x130e16810_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x156019d90_0, 0, 1;
+    %store/vec4 v0x130e168b0_0, 0, 1;
     %delay 10, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x156019cf0_0, 0, 1;
+    %store/vec4 v0x130e16810_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x156019d90_0, 0, 1;
+    %store/vec4 v0x130e168b0_0, 0, 1;
     %delay 10, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x156019cf0_0, 0, 1;
+    %store/vec4 v0x130e16810_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x156019d90_0, 0, 1;
-    %vpi_call 2 24 "$finish" {0 0 0};
+    %store/vec4 v0x130e168b0_0, 0, 1;
+    %vpi_call 2 25 "$finish" {0 0 0};
     %end;
     .thread T_1;
 # The file index is used to find the file name in the following table.
