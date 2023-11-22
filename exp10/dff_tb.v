@@ -10,9 +10,6 @@ initial begin
 $display("reset\tclk\tD\tq");
 $monitor("%d\t%d\t%d\t%d",rst,clk,d,q);
 
-
-integer i;
-
 clk=0;d=0;rst=0;
 #5 rst=1;
 repeat(6) begin
